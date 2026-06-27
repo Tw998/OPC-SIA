@@ -1,0 +1,94 @@
+{
+  "company_profile": {
+    "name_en": "Medtronic plc",
+    "name_cn": "美敦力",
+    "website": "https://www.medtronic.com",
+    "linkedin": "https://www.linkedin.com/company/medtronic",
+    "china_entity_name": "美敦力（上海）管理有限公司 (Medtronic (Shanghai) Management Co., Ltd.)",
+    "china_legal_rep": "邓坚",
+    "founded_year": "1949",
+    "parent_company": "",
+    "is_public": true,
+    "ticker": "NYSE: MDT",
+    "industry": "Medical Technology / Medical Devices (Healthcare Technology)",
+    "revenue": "USD 33.5B (FY2025, ended 2025-04-25)",
+    "employees_global": "95,000+",
+    "employees_china": "~6,000",
+    "hq": "Legally incorporated in Dublin, Ireland; operational HQ in Minneapolis (Fridley), Minnesota, USA. China HQ in Shanghai.",
+    "china_offices": ["Shanghai (China HQ)", "Beijing", "Chengdu", "Changzhou", "Guangzhou", "Hefei", "Lanzhou", "approx. 12 regional offices nationwide"]
+  },
+  "china_footprint": {
+    "entity_types": ["WFOE", "Factory", "R&D"],
+    "cities": [
+      {"city": "Shanghai", "headcount": "", "functions": ["China HQ / management", "R&D Center (est. 2012)", "Innovation Center (est. 2005)", "Medical Innovation Accelerator (Minhang)", "Cardiovascular manufacturing base (Lingang, operational 2023)", "Commercial / Sales"]},
+      {"city": "Chengdu", "headcount": "", "functions": ["Innovation Center (launched 2021)", "Manufacturing base", "Training"]},
+      {"city": "Changzhou", "headcount": "", "functions": ["Medtronic Kanghui Changzhou Technology Park - orthopedics manufacturing", "Global supply chain base", "Kanghui Medical global HQ"]},
+      {"city": "Beijing", "headcount": "", "functions": ["Commercial / Regional office"]}
+    ],
+    "has_shared_service_center": false,
+    "ssc_location": "No dedicated finance SSC identified in China. Medtronic's global business services / shared services for finance are centered in India (Hyderabad) and other global hubs, not China.",
+    "notes": "Medtronic has operated in China for 30+ years ('35 years' per 2024 Xinhua coverage). Footprint: ~12 regional offices, ~6,000 employees, 1 R&D center, 2 innovation centers (Shanghai + Chengdu - China is the only single market globally with two), and 3 major manufacturing bases (Shanghai, Chengdu, Changzhou). The Shanghai management entity (WFOE, est. 2000-06-08, registered capital USD 2M, USCC 9131000060741770XH, in Shanghai FTZ / Donghua Financial Tower) handles investment, marketing, capital operations & financial management, tech support/R&D, info services and training for Medtronic group entities in China - i.e. it performs an internal management/services role but is not a named multi-country finance SSC."
+  },
+  "buying_committee": [
+    {"name": "Alex Gu (顾宇韶)", "title": "Senior Vice President & President, Greater China; member of Medtronic Global Executive Committee", "function": "Digital", "linkedin": "", "location": "Shanghai, China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "", "seniority": "C-level"},
+    {"name": "邓坚", "title": "Legal Representative, 美敦力（上海）管理有限公司", "function": "Finance", "linkedin": "", "location": "Shanghai, China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "", "seniority": "Director"},
+    {"name": "Thierry Piéton", "title": "Executive Vice President & Chief Financial Officer (Global)", "function": "Finance", "linkedin": "", "location": "USA (global)", "in_china": false, "email": "", "recently_changed_job": true, "years_in_role": "since March 2025", "seniority": "C-level"}
+  ],
+  "org_chart": {
+    "description": "Global CFO Thierry Piéton leads finance globally from the US/HQ. Greater China is led by SVP & President Alex Gu (Shanghai), who sits on the Global Executive Committee; China commercial, R&D, manufacturing and finance functions report into the Greater China organization. The Shanghai management WFOE (legal rep 邓坚) provides intra-group management, financial management and shared services to China entities. China-specific Finance/IT/Procurement/SSC functional leaders were not individually identifiable from public sources.",
+    "chain": ["Geoff Martha (Chairman & CEO, Global)", "Thierry Piéton (EVP & CFO, Global)", "Alex Gu (SVP & President, Greater China - Shanghai)", "China Finance / IT / Procurement functional leaders (not publicly identified)"]
+  },
+  "tech_stack": {
+    "erp": ["SAP (mySAP Business Suite selected 2003 to consolidate global legacy ERPs onto a single SAP platform; SAP HANA strategic BI platform - one of earliest global adopters, scaled multi-node; hundreds of interconnected SAP systems on-prem and cloud)"],
+    "expense_travel": ["SAP Concur Expense (strong indication - see concur_details)"],
+    "procurement": [],
+    "hr": [],
+    "itsm": [],
+    "crm": [],
+    "bi_cloud": ["SAP HANA (global BI strategic platform)"],
+    "collaboration": [],
+    "concur_installed": "yes",
+    "concur_details": "Strong evidence Medtronic uses SAP Concur for T&E. (1) A dedicated employee expense portal exists at myexpenses.medtronic.com ('Medtronic | Expense Reimbursement'). (2) AppsRunTheWorld lists 'Medtronic Switzerland selects SAP Concur Expense for expense management', indicating Concur adoption within the Medtronic group. (3) Medtronic is a heavy SAP shop globally (SAP ERP + SAP HANA), and Concur integrates natively with SAP. Not 100% confirmed that the China entities run the same Concur instance, but group-level Concur usage is highly likely. Confidence: medium-high. China-specific Concur deployment: unconfirmed - a key qualification target.",
+    "details": [
+      {"category": "ERP", "vendor": "SAP", "product": "mySAP Business Suite / SAP ERP (consolidated single global platform)", "cloud": false, "since": "2003", "partner": "", "confidence": "high", "source": "https://www.sdcexec.com/sourcing-procurement/news/10353338/sap-medtronic-selects-sap"},
+      {"category": "BI/Analytics", "vendor": "SAP", "product": "SAP HANA (strategic global BI platform, multi-node)", "cloud": false, "since": "2014", "partner": "", "confidence": "high", "source": "https://blogs.sap.com/2014/05/20/medtronic-accelerates-global-bi-strategy-with-sap-hana/"},
+      {"category": "Expense/Travel", "vendor": "SAP", "product": "SAP Concur Expense", "cloud": true, "since": "", "partner": "", "confidence": "medium", "source": "https://www.appsruntheworld.com/customers-database/purchases/view/medtronic-switzerland-switzerland-selects-sap-concur-expense-for-expense-management"},
+      {"category": "Expense/Travel", "vendor": "Medtronic (internal portal)", "product": "myexpenses.medtronic.com employee expense reimbursement portal", "cloud": true, "since": "", "partner": "", "confidence": "medium", "source": "https://myexpenses.medtronic.com/"}
+    ]
+  },
+  "business_events": [
+    {"date": "2026 (operations) / 2025 (construction completion)", "type": "Manufacturing expansion / SSC-like buildout", "title": "Medtronic Kanghui Changzhou Technology Park comprehensive upgrade", "summary": "Strategic upgrade with Changzhou High-Tech Zone to build 4 functional centers (Smart Manufacturing, Research Excellence, Innovation Incubation, Customer Innovation Experience). Positions Changzhou as a regional base for Medtronic's global supply chain and Kanghui's global HQ. New building expected complete summer 2025, official operations 2026. Originally announced June 2022.", "source": "https://www.medtronic.com/cn-zh/about/news/_-_0.html", "sales_trigger": true},
+    {"date": "2023-04-26", "type": "New factory", "title": "Medtronic Lingang (Shanghai) cardiovascular manufacturing base completed / operational", "summary": "~RMB 300M first-phase investment in Shanghai Lingang New Area; first Fortune 500 medical company in Lingang (signed Oct 2021). Cardiovascular device R&D and localized manufacturing; targeted 5 new products to mass production and 500th employee by 2024.", "source": "https://www.medtronic.com/cn-zh/about/news/medtronic_lingang.html", "sales_trigger": true},
+    {"date": "2025-07-08", "type": "Leadership / corporate restructuring", "title": "Medtronic appoints MiniMed CFO ahead of planned diabetes business separation", "summary": "Medtronic is separating its MiniMed (diabetes) business into a standalone company and named a dedicated CFO - signals significant finance/systems carve-out activity group-wide.", "source": "https://news.medtronic.com/2025-07-08-Medtronic-announces-appointment-of-MiniMed-chief-financial-officer-ahead-of-intended-separation-into-standalone-company", "sales_trigger": true},
+    {"date": "2025-03", "type": "CFO change", "title": "Thierry Piéton becomes Global EVP & CFO", "summary": "New global CFO appointment - finance leadership transition often a window for finance-transformation / systems review.", "source": "https://www.medtronic.com/en-us/our-company/leadership/thierry-pieton.html", "sales_trigger": true},
+    {"date": "2025", "type": "Recognition / HR", "title": "Medtronic named 'Top Employer China 2025' (中国杰出雇主2025)", "summary": "Signals continued investment in China workforce and HR/people systems.", "source": "https://www.medtronic.com/cn-zh/about/news/_-_2025-_.html", "sales_trigger": false}
+  ],
+  "hiring_signals": [
+    {"title": "Intern - SAP Training & Role Management", "function": "IT", "location": "Shanghai, China", "keywords": ["SAP", "role management", "training"], "posted": "2024-2025", "source": "https://m.liepin.com/company/8276408/", "transformation_signal": true},
+    {"title": "Various finance / sales support / SAP-related roles (43+ open positions across Shanghai, Lanzhou, Hefei)", "function": "Finance", "location": "Shanghai / Lanzhou / Hefei, China", "keywords": ["finance", "SAP", "sales support"], "posted": "2025", "source": "https://m.jobui.com/company/11872472/jobs/", "transformation_signal": false}
+  ],
+  "ai_summary_cn": "美敦力（Medtronic, NYSE:MDT）是全球最大的医疗科技企业，FY2025全球营收约335亿美元、员工9.5万+。在华深耕30余年，约6,000名员工、约12个办事处，中国总部在上海；拥有1个研发中心（上海2012）、2个创新中心（上海2005、成都2021，中国是全球唯一拥有两个创新中心的市场）及3大生产基地（上海临港心血管工厂2023投产、成都、常州康辉骨科科技园）。主体公司为美敦力（上海）管理有限公司（WFOE，2000年成立，法定代表人邓坚，承担集团在华投资、营销、资金运作与财务管理、研发及培训等内部管理/共享职能）。ERP方面美敦力是深度SAP用户（2003年起mySAP统一全球ERP，SAP HANA为全球BI平台，全球数百套SAP系统），费控/差旅极可能已用SAP Concur（集团瑞士实体已选用Concur Expense，且存在员工报销门户myexpenses.medtronic.com），但中国本地是否同一Concur实例尚未证实——这是关键的销售切入与确认点。无专门的中国财务共享中心，集团财务共享更多在印度等地。近期信号丰富：2025年3月新任全球CFO、2025年7月为MiniMed糖尿病业务拆分任命独立CFO（涉及财务/系统剥离）、常州康辉科技园2025完工2026运营、临港工厂持续扩产、获评中国杰出雇主2025，并出现SAP角色管理等招聘。综合判断：在华规模大、SAP底座成熟、Concur大概率已用但中国落地待确认、本土化与拆分带来财务数字化机会窗口。建议以'确认中国是否已上Concur及财务共享/费控本地化'为切入点。",
+  "sources": [
+    "https://www.medtronic.com/cn-zh/our-company/locations.html",
+    "https://www.sec.gov/Archives/edgar/data/0001613103/000161310325000091/mdt-20250425.htm",
+    "https://news.medtronic.com/2025-02-18-Medtronic-reports-third-quarter-fiscal-2025-financial-results",
+    "https://www.appsruntheworld.com/customers-database/purchases/view/medtronic-switzerland-switzerland-selects-sap-concur-expense-for-expense-management",
+    "https://myexpenses.medtronic.com/",
+    "https://www.sdcexec.com/sourcing-procurement/news/10353338/sap-medtronic-selects-sap",
+    "https://blogs.sap.com/2014/05/20/medtronic-accelerates-global-bi-strategy-with-sap-hana/",
+    "https://m.qixin.com/company/b39a9533-1c34-4a12-8d8b-53f3470b99c9",
+    "https://www.tianyancha.com/company/3186527071",
+    "https://www.medtronic.com/cn-zh/our-company/leadership/alex-gu.html",
+    "https://www.medtronic.com/en-us/our-company/leadership/thierry-pieton.html",
+    "https://news.medtronic.com/2025-07-08-Medtronic-announces-appointment-of-MiniMed-chief-financial-officer-ahead-of-intended-separation-into-standalone-company",
+    "https://www.medtronic.com/cn-zh/about/news/_-_0.html",
+    "https://www.medtronic.com/cn-zh/about/news/medtronic_lingang.html",
+    "https://www.medtronic.com/cn-zh/transforming-healthcare/manufacturing-facilities.html",
+    "http://www.news.cn/health/20241031/cc11677c6cc641c6a8548fb5dfdc9315/c.html",
+    "https://m.liepin.com/company/8276408/",
+    "https://m.jobui.com/company/11872472/jobs/",
+    "https://www.linkedin.com/company/medtronic-shanghai-management-co-ltd",
+    "https://www.medtronic.com/cn-zh/about/news/_-_2025-_.html"
+  ],
+  "data_confidence": "medium"
+}

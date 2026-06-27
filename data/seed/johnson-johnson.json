@@ -1,0 +1,95 @@
+{
+  "company_profile": {
+    "name_en": "Johnson & Johnson",
+    "name_cn": "强生",
+    "website": "https://www.jnj.com",
+    "linkedin": "https://www.linkedin.com/company/johnson-&-johnson",
+    "china_entity_name": "强生（中国）投资有限公司 (Johnson & Johnson (China) Investment Ltd.)",
+    "china_legal_rep": "汪轶 / ZHOU MINTAO (registry sources differ; legal rep updated ~2024)",
+    "founded_year": "1886",
+    "parent_company": "None (Johnson & Johnson is the ultimate parent; consumer arm spun off as Kenvue in 2023)",
+    "is_public": true,
+    "ticker": "NYSE: JNJ",
+    "industry": "Pharmaceuticals (Innovative Medicine) & Medical Devices (MedTech) / Healthcare",
+    "revenue": "USD 88.8B global (FY2024); ~USD 91B FY2025",
+    "employees_global": "~140,000",
+    "employees_china": "~10,000-11,000",
+    "hq": "New Brunswick, New Jersey, USA; China HQ in Shanghai (Xuhui District, 桂箐路65号 / Wanbao Center, Xinhua Rd)",
+    "china_offices": ["Shanghai (China HQ)", "Beijing", "Guangzhou", "Suzhou", "Xi'an", "Shenyang", "90+ cities total"]
+  },
+  "china_footprint": {
+    "entity_types": ["WFOE", "JV", "Factory", "R&D", "Shared Service", "Procurement Center"],
+    "cities": [
+      {"city": "Shanghai", "headcount": "", "functions": ["China HQ", "Medical Devices (强生(上海)医疗器材)", "Vision Care (强生视力健商贸)", "Investment holding (强生(中国)投资)", "Commercial", "Finance", "IT"]},
+      {"city": "Suzhou", "headcount": "~700 at medical campus; ~170 in Global Finance Services center", "functions": ["MedTech manufacturing (DePuy/Ethicon)", "Global Business Services (Finance/HR/Procurement SSC)", "R&D/Innovation Center", "Regional procurement & supplier mgmt"]},
+      {"city": "Xi'an", "headcount": "", "functions": ["Xian Janssen Pharmaceutical (西安杨森) - oldest JV, est. 1985", "Pharma manufacturing", "Supply chain innovation hub (USD 397M, 2019)"]},
+      {"city": "Beijing", "headcount": "", "functions": ["Commercial", "Training institute", "Medical (强生(中国)医疗器材)"]},
+      {"city": "Guangzhou", "headcount": "", "functions": ["Commercial/Sales"]}
+    ],
+    "has_shared_service_center": true,
+    "ssc_location": "Suzhou (Suzhou Industrial Park) — J&J Global Services delivery center; one of 5 worldwide (alongside Tampa US, Manila PH, Bogota CO, Prague CZ)",
+    "notes": "J&J Global Finance Services Asia Pacific (Suzhou) Center has ~170 finance staff delivering AR/AP/General Accounting for China mainland, HK/Taiwan, Japan, Korea. The Suzhou GBS center covers three functions: Finance, Human Resources, and Procurement. Suzhou Industrial Park is J&J Medical's largest integrated campus in China (manufacturing + SSC + R&D + regional procurement). ~16 legal entities in China; entered China 1985 via Xian Janssen JV."
+  },
+  "buying_committee": [
+    {"name": "Joseph J. Wolk", "title": "EVP & Chief Financial Officer", "function": "Finance", "linkedin": "", "location": "New Brunswick, NJ, USA", "in_china": false, "email": "", "recently_changed_job": false, "years_in_role": "Since 2018", "seniority": "C-level"},
+    {"name": "Cherry Huang (黄琛)", "title": "President, Johnson & Johnson Innovative Medicine China", "function": "Digital", "linkedin": "", "location": "Shanghai, China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "", "seniority": "C-level"},
+    {"name": "", "title": "VP Finance & CFO, Innovative Medicine Asia Pacific", "function": "Finance", "linkedin": "", "location": "Asia Pacific (likely Singapore/Shanghai)", "in_china": false, "email": "", "recently_changed_job": false, "years_in_role": "", "seniority": "C-level"}
+  ],
+  "org_chart": {
+    "description": "J&J finance/shared-services is globally centralized under the Global CFO (Joseph Wolk), who leads J&J Global Services (GBS). GBS runs 5 delivery centers; the APAC/North-Asia finance, HR and procurement shared services are delivered from Suzhou, China. China commercial businesses run under segment presidents (Innovative Medicine China President = Cherry Huang; MedTech under separate leadership) with regional APAC finance leadership above the China entities.",
+    "chain": ["Joseph Wolk (Global EVP & CFO, leads Global Services/GBS)", "Global Business Services org (5 centers incl. Suzhou)", "VP Finance/CFO Innovative Medicine APAC", "China entity finance/SSC leaders (Suzhou Global Finance Services Center, ~170 staff)", "Suzhou GBS Finance/HR/Procurement managers"]
+  },
+  "tech_stack": {
+    "erp": ["SAP (primary global ERP, ECC 6.0 legacy migrating to SAP S/4HANA)", "Multiple ERPs historically (20+ ERP and 20+ non-ERP systems being consolidated under SAP-led 'Intelligent Finance Transformation')"],
+    "expense_travel": ["SAP Concur Expense (selected 2016, displaced a legacy expense system)"],
+    "procurement": ["SAP (procurement run through Suzhou GBS regional procurement & supplier management)"],
+    "hr": ["Global HR services delivered via J&J Global Services Suzhou; Workday likely (unconfirmed)"],
+    "itsm": [],
+    "crm": [],
+    "bi_cloud": [],
+    "collaboration": [],
+    "concur_installed": "yes",
+    "concur_details": "Johnson & Johnson selected SAP Concur Expense for expense management in 2016, displacing a legacy system and integrating with existing finance systems (per appsruntheworld customers database). As a global SAP shop with a Suzhou finance SSC, Concur is highly likely deployed across China operations, though China-specific confirmation is indirect. The China business is therefore an existing SAP Concur footprint — relevant for upsell/migration/optimization rather than greenfield Concur sale.",
+    "details": [
+      {"category": "ERP", "vendor": "SAP", "product": "SAP ERP ECC 6.0 → SAP S/4HANA (Central Finance / S/4HANA Finance)", "cloud": false, "since": "Legacy; S/4HANA rollouts from ~2023", "partner": "SAP (direct, 'Intelligent Finance Transformation' roadmap with SAP)", "confidence": "high", "source": "appsruntheworld; argyleforum.com; techtimes"},
+      {"category": "Expense/Travel", "vendor": "SAP Concur", "product": "Concur Expense", "cloud": true, "since": "2016", "partner": "", "confidence": "medium", "source": "appsruntheworld customers database"},
+      {"category": "Shared Services", "vendor": "J&J Global Services (internal) on SAP", "product": "GBS Finance/HR/Procurement (Suzhou)", "cloud": false, "since": "2010", "partner": "", "confidence": "high", "source": "jnj.com press release; ACCA Careers; news.2500sz.com"}
+    ]
+  },
+  "business_events": [
+    {"date": "2026-01", "type": "Reorganization", "title": "J&J MedTech moves to decentralized, business-unit-led operating model", "summary": "Effective January 2026, J&J MedTech restructured into a more decentralized BU-led model to cut bureaucracy and increase accountability — a structural change that often triggers finance-systems and process re-platforming.", "source": "https://www.core-brief.com/johnson-johnson-starts-2026-on-firm-footing-as-drug-growth-offsets-a-more-measured-medtech-pace/", "sales_trigger": true},
+    {"date": "2025-02-25", "type": "China Investment/Manufacturing", "title": "Localized production of HARMONIC 7s ultrasonic scalpel in Suzhou; high-end medical device project", "summary": "J&J MedTech launched first domestic production of 7mm ultrasonic scalpels at J&J (Suzhou) Medical Devices in Suzhou Industrial Park, building on a recent high-end medical device industry investment in the park (amount undisclosed). Reinforces Suzhou as J&J Medical's largest integrated China campus.", "source": "https://news.2500sz.com/doc/2025/02/26/1136017.shtml", "sales_trigger": true},
+    {"date": "2025-2026", "type": "Market Headwind", "title": "China VBP (volume-based procurement) pressure on MedTech", "summary": "J&J flagged continued China headwinds from government volume-based procurement plus ~USD 500M tariff exposure in 2026 — driving a cost/efficiency focus that favors finance automation and shared-services optimization.", "source": "https://www.theglobeandmail.com/investing/markets/stocks/MDT/pressreleases/1117869/jnj-q1-medtech-preview-key-drivers-and-china-headwinds-to-watch/", "sales_trigger": true},
+    {"date": "ongoing (2023+)", "type": "Finance/IT Transformation", "title": "SAP-led 'Intelligent Finance Transformation' (S/4HANA consolidation)", "summary": "J&J is consolidating 20+ ERP and 20+ non-ERP systems onto SAP S/4HANA with a roadmap built jointly with SAP; Switzerland S/4HANA go-live ~2023. Major global finance re-platforming relevant to T&E and SSC tooling.", "source": "https://argyleforum.com/events/johnson-johnsons-intelligent-finance-transformation-journey-a-case-study/", "sales_trigger": true},
+    {"date": "2023", "type": "Corporate Structure", "title": "Kenvue consumer-health spin-off completed", "summary": "J&J separated its consumer arm as Kenvue (2023); remaining J&J focuses on Innovative Medicine (Pharma) + MedTech. Service-pact wind-down between J&J and Kenvue is ongoing (incl. Kenvue layoffs), implying SSC/IT disentanglement work.", "source": "https://www.fiercepharma.com/pharma/kenvue-maps-out-hundreds-layoffs-service-pact-jj-winds-down", "sales_trigger": false}
+  ],
+  "hiring_signals": [
+    {"title": "SAP Finance / Financial Systems Analyst roles (global, incl. APAC GBS)", "function": "Finance", "location": "Suzhou / APAC / India shared-service hubs", "keywords": ["SAP", "S/4HANA", "Finance", "Product Costing", "Financial Systems"], "posted": "2025-2026", "source": "https://www.careers.jnj.com/en/jobs/", "transformation_signal": true},
+    {"title": "Global Service FP&A / Finance Analyst (Global Services network)", "function": "SSC", "location": "GBS centers (Manila / Suzhou)", "keywords": ["Global Services", "FP&A", "shared services", "SAP/ERP"], "posted": "2025-2026", "source": "https://jobs.jnj.com/en/jobs/2506233413w/global-service-financial-planning-analysis-senior-finance-analyst/", "transformation_signal": true},
+    {"title": "Senior Finance Manager / APAC Tax Compliance (Shanghai)", "function": "Finance", "location": "Shanghai", "keywords": ["Finance", "Tax Compliance", "SAP/ERP"], "posted": "2025-2026", "source": "https://www.careers.jnj.com/en/locations/asia-pacific/china/", "transformation_signal": false},
+    {"title": "Procurement roles via Suzhou GBS (regional procurement & supplier management)", "function": "Procurement", "location": "Suzhou", "keywords": ["Procurement", "supplier management", "SAP"], "posted": "2025-2026", "source": "https://jobs.accaglobal.com/employer/14413/johnson-and-johnson-medical-suzhou-ltd-/", "transformation_signal": true}
+  ],
+  "ai_summary_cn": "强生（J&J，纽交所代码JNJ，2023年已剥离消费品业务Kenvue，现聚焦创新药Innovative Medicine与医疗科技MedTech，全球营收约888亿美元/约14万员工）在华规模庞大：约10,000–11,000名员工、约16家法人主体、覆盖90多个城市，中国总部位于上海徐汇，重点城市包括上海、北京、广州、苏州、西安（最早合资企业西安杨森，1985年进入中国）。核心切入点：强生在苏州工业园设有亚太/北亚财务共享服务中心（J&J Global Finance Services Suzhou，约170名财务人员，负责中国大陆、港台、日韩的AR/AP/总账），是全球5大GBS交付中心之一，覆盖财务、HR、采购三大职能，苏州同时是其医疗器械最大综合园区（含智能制造、研发与区域采购）。技术栈方面，强生全球以SAP为主ERP（ECC 6.0正向S/4HANA迁移，正与SAP联合推进整合20+ERP系统的“智能财务转型”），并已于2016年选用SAP Concur Expense替换旧报销系统——因此中国大概率已是Concur存量客户，机会点在于升级、扩容、迁移与优化而非全新部署。近期信号强烈：2026年1月MedTech转向更去中心化的业务单元运营模式、2025年苏州本地化生产高端超声刀并追加高端医疗器械投资、中国VBP集采与约5亿美元关税压力推动降本增效，且全球及苏州/亚太GBS持续招聘SAP财务、共享服务FP&A与采购等转型相关岗位。综合判断：这是一个以苏州财务共享中心为核心、SAP+Concur已落地、正处于S/4HANA转型与成本优化窗口期的高价值目标客户。",
+  "sources": [
+    "https://www.linkedin.com/company/jnjchina",
+    "https://www.careers.jnj.com/en/locations/asia-pacific/china/",
+    "https://www.jnj.com/media-center/press-releases/johnson-johnson-medical-companies-opens-innovation-center-in-china-to-serve-emerging-markets",
+    "https://www.jnj.com.cn/our-company/operating-companies-in-china",
+    "https://www.sec.gov/Archives/edgar/data/200406/000130817925000085/jnj013333-ars.pdf",
+    "https://www.appsruntheworld.com/customers-database/purchases/view/johnson-johnson-united-states-selects-sap-concur-expense-for-expense-management",
+    "https://argyleforum.com/events/johnson-johnsons-intelligent-finance-transformation-journey-a-case-study/",
+    "https://www.appsruntheworld.com/customers-database/purchases/view/johnson-johnson-switzerland-switzerland-selects-sap-s-4-hana-for-erp-financial",
+    "https://jobs.accaglobal.com/employer/14413/johnson-and-johnson-medical-suzhou-ltd-/",
+    "https://www.jnj.cz/o-spolecnosti/struktura-spolecnosti/jnj-global-business-services",
+    "https://news.2500sz.com/doc/2025/02/26/1136017.shtml",
+    "https://www.core-brief.com/johnson-johnson-starts-2026-on-firm-footing-as-drug-growth-offsets-a-more-measured-medtech-pace/",
+    "https://www.theglobeandmail.com/investing/markets/stocks/MDT/pressreleases/1117869/jnj-q1-medtech-preview-key-drivers-and-china-headwinds-to-watch/",
+    "https://www.fiercepharma.com/pharma/kenvue-maps-out-hundreds-layoffs-service-pact-jj-winds-down",
+    "https://www.jnj.com/joseph-j-wolk",
+    "https://www.janssen.com/apac/leaderships",
+    "https://www.tianyancha.com/company/19012323",
+    "https://www.qcc.com/cmainmember/e145f2e7cf1e1aea7de9372d295dd54b",
+    "https://www.xian-janssen.com.cn/en/about-xian-janssen/jnj-family"
+  ],
+  "data_confidence": "medium"
+}

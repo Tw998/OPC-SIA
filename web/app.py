@@ -26,6 +26,30 @@ app.jinja_env.globals["zip"] = zip
 _VERCEL = bool(os.environ.get("VERCEL"))
 
 
+def _bootstrap_db():
+    """初始化 DB 并在为空时灌入种子数据。
+
+    本地 `serve.py` import 时跑一次;Vercel 每次冷启动跑(/tmp 会被清空,
+    所以每次都从 data/seed 重新灌 3 家样本,保证线上 dashboard 非空)。
+    """
+    db.init_db()
+    try:
+        if not db.list_companies():
+            base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            for sub in ("data/seed", "data/enriched"):
+                p = os.path.join(base, sub)
+                if os.path.isdir(p):
+                    n = db.import_enriched(p)
+                    if n:
+                        print(f"[bootstrap] seeded {n} from {sub}", flush=True)
+                        break
+    except Exception as e:  # noqa: BLE001
+        print(f"[bootstrap] {e}", flush=True)
+
+
+_bootstrap_db()
+
+
 @app.template_filter("datefmt")
 def datefmt(s):
     return (str(s) or "")[:10]

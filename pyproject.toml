@@ -1,2 +1,13 @@
+[project]
+name = "sales-intel-agent"
+version = "0.1.0"
+description = "Hitpoint Sales Intelligence Agent — Company Intelligence pipeline + web UI"
+requires-python = ">=3.9"
+dependencies = [
+    "flask>=3.0",
+    "openpyxl>=3.1",
+    "anthropic>=0.40",
+]
+
 [tool.vercel]
 entrypoint = "serve:app"

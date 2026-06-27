@@ -1,0 +1,97 @@
+{
+  "company_profile": {
+    "name_en": "Schneider Electric",
+    "name_cn": "施耐德电气",
+    "website": "https://www.se.com",
+    "linkedin": "https://www.linkedin.com/company/schneider-electric",
+    "china_entity_name": "施耐德电气（中国）有限公司 (Schneider Electric (China) Co., Ltd.)",
+    "china_legal_rep": "尹正 (Yin Zheng)",
+    "founded_year": "1836 (group); China entity registered 1995-07-10; entered China market 1987",
+    "parent_company": "Schneider Electric SE (France)",
+    "is_public": true,
+    "ticker": "EPA:SU (Euronext Paris); ADR: SBGSY",
+    "industry": "Energy management, electrical equipment, industrial automation & digitalization",
+    "revenue": "~€38-40bn / ~US$45.4bn global FY2025",
+    "employees_global": "~162,970 (2025)",
+    "employees_china": "~18,000-28,000 (sources vary; recent official figures cite ~18,000)",
+    "hq": "Rueil-Malmaison, France (global); China HQ: Beijing (施耐德电气大厦, 望京东路6号A座, 朝阳区)",
+    "china_offices": ["Beijing (China HQ)", "Shanghai", "Wuhan", "Shenzhen", "Chengdu", "Guangzhou", "Xiamen", "Wuxi"]
+  },
+  "china_footprint": {
+    "entity_types": ["WFOE", "Factory", "R&D", "Shared Service", "Procurement Center"],
+    "cities": [
+      {"city": "Beijing", "headcount": "", "functions": ["China HQ", "Finance Shared Service - capability/value-added center"]},
+      {"city": "Wuhan", "headcount": "~220 (China finance SSC, Beijing+Wuhan combined)", "functions": ["Finance Shared Service - settlement center (Mainland China & Northeast Asia)", "Factory (WEF Lighthouse)"]},
+      {"city": "Shanghai", "headcount": "", "functions": ["Smart factory (Putuo District)", "R&D", "AI innovation lab", "Commercial"]},
+      {"city": "Xiamen", "headcount": "", "functions": ["R&D office + medium-voltage factory (new industrial park, world's largest MV base)"]},
+      {"city": "Shenzhen", "headcount": "", "functions": ["Office", "Manufacturing"]},
+      {"city": "Chengdu", "headcount": "", "functions": ["Office"]}
+    ],
+    "has_shared_service_center": true,
+    "ssc_location": "Beijing (capability/value-added center) + Wuhan (settlement center); ~220 finance staff. Six SSC domains in China: finance, procurement, IT, sales & distribution, facility installation, energy management",
+    "notes": "China is Schneider's 2nd-largest market globally. ~30+ factories/distribution centers, 5 R&D facilities, 1 AI innovation lab, ~1,600 local supplier partners. China finance SSC established 2008, reports directly to French HQ (peer to India/Philippines/US/Poland SSCs). 'China Hub' regionalization strategy targets ~90% regional sourcing/manufacturing."
+  },
+  "buying_committee": [
+    {"name": "尹正 (Yin Zheng)", "title": "EVP, China & East Asia / China President; Group Executive Committee member; legal rep of China entity", "function": "Digital", "linkedin": "", "location": "Beijing, China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "since Jan 2017", "seniority": "C-level"},
+    {"name": "张开鹏 (Zhang Kaipeng)", "title": "Senior Vice President, Global Supply Chain - China", "function": "Procurement", "linkedin": "", "location": "China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "since Aug 2016", "seniority": "C-level"},
+    {"name": "Nathan Fast", "title": "Group Chief Financial Officer (effective 2026-04-06, succeeding Hilary Maxson)", "function": "Finance", "linkedin": "", "location": "France (Group, global)", "in_china": false, "email": "", "recently_changed_job": true, "years_in_role": "from Apr 2026", "seniority": "C-level"},
+    {"name": "李颖 (Li Ying)", "title": "Finance Manager - Shared Service", "function": "SSC", "linkedin": "https://www.linkedin.com/in/%E9%A2%96-%E6%9D%8E-63343618b/", "location": "China", "in_china": true, "email": "", "recently_changed_job": false, "years_in_role": "", "seniority": "Manager"}
+  ],
+  "org_chart": {
+    "description": "China is led by EVP/China President Yin Zheng (Group ExCom), with Supply Chain China under SVP Zhang Kaipeng. Finance flows up to the global Group CFO (Nathan Fast from Apr 2026). The China Finance Shared Service Center (Beijing capability + Wuhan settlement, ~220 staff) reports directly into the global/French HQ shared-service organization rather than only into China-region finance — a key signal that T&E/expense system decisions may be globally standardized.",
+    "chain": ["Group CEO (Olivier Blum)", "Group CFO (Nathan Fast, from Apr 2026)", "Global Shared Service organization (HQ France)", "China Finance SSC (Beijing + Wuhan, ~220)", "China President / EVP China & East Asia (Yin Zheng)"]
+  },
+  "tech_stack": {
+    "erp": ["SAP S/4HANA Cloud (selected 2022; two-tier strategy with RISE with SAP)", "SAP ECC (legacy, being modernized)"],
+    "expense_travel": [],
+    "procurement": ["Likely SAP Ariba (unconfirmed; consistent with SAP-centric stack)"],
+    "hr": [],
+    "itsm": [],
+    "crm": [],
+    "bi_cloud": ["SAP analytics; significant AI/digital tooling and RPA in finance SSC"],
+    "collaboration": [],
+    "concur_installed": "unknown",
+    "concur_details": "No public confirmation that Schneider Electric uses SAP Concur for T&E. However, the company runs a strongly SAP-centric ERP estate (S/4HANA Cloud, RISE with SAP, two-tier strategy) and a global finance shared-service model that standardizes processes, which is a favorable environment for SAP Concur. China finance SSC explicitly uses RPA and AI for expense/settlement processes. Concur status should be verified directly; treat as a primary qualification question for sales.",
+    "details": [
+      {"category": "ERP", "vendor": "SAP", "product": "S/4HANA Cloud (Public Edition) + RISE with SAP, two-tier model", "cloud": true, "since": "2022 (selection)", "partner": "", "confidence": "high", "source": "https://www.appsruntheworld.com/customers-database/purchases/view/schneider-electric-france-selects-sap-s-4hana-cloud-for-erp-financial"},
+      {"category": "ERP", "vendor": "SAP", "product": "SAP ECC (legacy)", "cloud": false, "since": "", "partner": "", "confidence": "medium", "source": "https://www.sap.com/assetdetail/2025/05/f6a6d8bb-087f-0010-bca6-c68f7e60039b.html"},
+      {"category": "Automation", "vendor": "Various / SAP", "product": "RPA + AI in finance shared service center", "cloud": false, "since": "", "partner": "", "confidence": "medium", "source": "https://www.treasurychina.com/post/5092.html"}
+    ]
+  },
+  "business_events": [
+    {"date": "2026-04-06", "type": "CFO change", "title": "Nathan Fast becomes Group CFO", "summary": "Nathan Fast (with Schneider since 2007) succeeds Hilary Maxson as Group CFO, effective 6 April 2026 — a leadership transition that often triggers finance-system/process reviews.", "source": "https://www.investing.com/news/company-news/schneider-electric-fy-2025-slides-record-40bn-revenues-strong-outlook-93CH-4526856", "sales_trigger": true},
+    {"date": "2024-04-26", "type": "China investment / new factory", "title": "Schneider Electric Xiamen Industrial Park groundbreaking", "summary": "Started construction of Xiamen Torch industrial park (~RMB1.2bn / ~US$169M, ~110,000 sqm) — to become the world's largest medium-voltage production base plus R&D office; completion 2025.", "source": "https://investinchina.chinadaily.com.cn/s/202404/28/WS662e14cf498ed2d7b7eacbae/schneider-electrics-key-production-base-starts-construction-in-china.html", "sales_trigger": true},
+    {"date": "2025-04-02", "type": "China strategy", "title": "'China Hub' strategy — China as global innovation hub", "summary": "SVP Ali Haj Fraj positions China as an innovation hub for software-defined automation, AI and sustainability; ~18,000 staff, 30+ factories/DCs, 5 R&D centers, 1 AI innovation lab in China.", "source": "https://english.news.cn/20250402/d7c91ff0d4694b69adfc0605b4445064/c.html", "sales_trigger": true},
+    {"date": "2026", "type": "Financial results / strategy", "title": "Record revenues and AI strategy; regionalization 'to the next level'", "summary": "Group reported record FY2025 revenues (~€40bn/US$45bn, +10%) and Q1 2026 +11% organic growth; CEO Olivier Blum prioritizes regionalization, tech leadership and pricing excellence — driving investment in China hub.", "source": "https://www.investing.com/news/company-news/schneider-electric-q1-2026-slides-11-organic-growth-ai-strategy-advances-93CH-4647883", "sales_trigger": false},
+    {"date": "2022", "type": "ERP transformation", "title": "Selection of SAP S/4HANA Cloud for ERP/Finance (two-tier, RISE with SAP)", "summary": "Schneider Electric selected SAP S/4HANA Cloud for ERP Financial, displacing legacy systems, with a two-tier strategy combining S/4HANA Cloud Public Edition and RISE with SAP across regions — an active, multi-year finance transformation.", "source": "https://www.appsruntheworld.com/customers-database/purchases/view/schneider-electric-france-selects-sap-s-4hana-cloud-for-erp-financial", "sales_trigger": true}
+  ],
+  "hiring_signals": [
+    {"title": "Finance digitalization / financial visualization project intern", "function": "Finance", "location": "Wuhan", "keywords": ["财务数字化", "data analysis", "automated financial workflows", "digitalization tools"], "posted": "2025-2026", "source": "https://m.liepin.com/company/2547498/", "transformation_signal": true},
+    {"title": "Procurement support / supply chain improvement roles", "function": "Procurement", "location": "China", "keywords": ["supplier management", "RFQ", "contracts", "supply chain improvement"], "posted": "2025-2026", "source": "https://www.zhaopin.com/companydetail/CZ000017110.htm", "transformation_signal": false},
+    {"title": "Finance / shared-service positions (174+ open China roles incl. SAP/finance/SSC)", "function": "SSC", "location": "Wuhan / Beijing / Shanghai", "keywords": ["SAP", "finance transformation", "shared service", "credit control"], "posted": "2026", "source": "https://www.linkedin.com/jobs/schneider-electric-jobs-china", "transformation_signal": true},
+    {"title": "Digital Star Program / Supply Chain Star Program (campus, incl. finance & digital tracks)", "function": "Digital", "location": "China", "keywords": ["digital", "finance", "strategy", "supply chain"], "posted": "2025-2026", "source": "https://www.schneider-electric.cn/zh/about-us/careers/digital.jsp", "transformation_signal": true}
+  ],
+  "ai_summary_cn": "施耐德电气是中国市场第二大全球市场的法资能源管理与工业自动化巨头，中国主体为「施耐德电气（中国）有限公司」（1995年注册，法定代表人尹正，北京望京总部），在华员工约1.8万–2.8万人，拥有30余家工厂/配送中心、5个研发中心、1个AI创新实验室。ERP方面已确认以SAP为核心，2022年起选用SAP S/4HANA Cloud并采用「双层（two-tier）+ RISE with SAP」战略推进全球财务转型，是高度SAP化的环境。是否使用SAP Concur暂无公开证据（标记unknown），但其全球统一的财务共享服务模式+SAP底座对Concur高度友好——这是销售首要需确认的问题。财务共享服务中心(SSC)布局在北京（能力/增值中心）+武汉（结算中心，覆盖中国大陆及东北亚），财务SSC约220人，且直接向法国总部汇报，意味着差旅费控/报销系统决策可能在全球层面统一。近期触发信号密集：①2026年4月Nathan Fast出任集团CFO（管理层换届常带来财务系统复盘）；②厦门工业园（约12亿元，全球最大中压基地，2024开工2025投产）等持续加码中国投资的「中国中心」战略；③武汉等地大量财务数字化、SAP、共享服务及数字化校招岗位，财务转型与RPA/AI应用活跃。建议切入点：以全球SAP财务转型+SSC标准化为背景，确认其T&E/报销工具现状，主推SAP Concur与采购数字化。",
+  "sources": [
+    "https://www.schneider-electric.cn/zh/about-us/company-profile/",
+    "https://www.schneider-electric.cn/zh/about-us/contact-us/our-office/headquarters/",
+    "https://www.treasurychina.com/post/5092.html",
+    "https://baike.baidu.com/item/施耐德电气（中国）有限公司/5569623",
+    "https://www.tianyancha.com/company/24505794",
+    "https://aiqicha.baidu.com/company_basic_28672840579123",
+    "https://www.appsruntheworld.com/customers-database/purchases/view/schneider-electric-france-selects-sap-s-4hana-cloud-for-erp-financial",
+    "https://www.sap.com/assetdetail/2025/05/f6a6d8bb-087f-0010-bca6-c68f7e60039b.html",
+    "https://english.news.cn/20250402/d7c91ff0d4694b69adfc0605b4445064/c.html",
+    "https://investinchina.chinadaily.com.cn/s/202404/28/WS662e14cf498ed2d7b7eacbae/schneider-electrics-key-production-base-starts-construction-in-china.html",
+    "https://www.investing.com/news/company-news/schneider-electric-fy-2025-slides-record-40bn-revenues-strong-outlook-93CH-4526856",
+    "https://www.investing.com/news/company-news/schneider-electric-q1-2026-slides-11-organic-growth-ai-strategy-advances-93CH-4647883",
+    "https://www.macrotrends.net/stocks/charts/SBGSY/schneider-electric-se/revenue",
+    "https://www.linkedin.com/jobs/schneider-electric-jobs-china",
+    "https://m.liepin.com/company/2547498/",
+    "https://www.zhaopin.com/companydetail/CZ000017110.htm",
+    "https://www.schneider-electric.cn/zh/about-us/careers/digital.jsp",
+    "https://www.linkedin.com/in/%E9%A2%96-%E6%9D%8E-63343618b/",
+    "https://en.wikipedia.org/wiki/Schneider_Electric"
+  ],
+  "data_confidence": "medium"
+}
