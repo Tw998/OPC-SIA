@@ -1,0 +1,28 @@
+# Database
+data/intel.db
+data/intel.db-shm
+data/intel.db-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Generated output
+output/
+data/enriched/
+
+# Secrets & env
+.env
+*.key
+secrets.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+~$*

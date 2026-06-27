@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}排名 — Hitpoint Sales Intelligence{% endblock %}
+
+{% block content %}
+{# ── Stats row ── #}
+<div class="row g-3 mb-3">
+  <div class="col-6 col-md-3">
+    <div class="card text-center py-3">
+      <div class="score-lg text-dark">{{ stats.total or 0 }}</div>
+      <div class="text-muted small mt-1">公司总数</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center py-3 border-success">
+      <div class="score-lg score-good">{{ stats.tier_a or 0 }}</div>
+      <div class="text-muted small mt-1">Tier A 机会</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center py-3" style="border-color:#fd7e14!important;border-width:2px;border-style:solid">
+      <div class="score-lg" style="color:#fd7e14">{{ stats.concur_unknown or 0 }}</div>
+      <div class="text-muted small mt-1">Concur 待确认 🎯</div>
+    </div>
+  </div>
+  <div class="col-6 col-md-3">
+    <div class="card text-center py-3 border-danger">
+      <div class="score-lg score-low">{{ stats.concur_no or 0 }}</div>
+      <div class="text-muted small mt-1">Concur 空白市场</div>
+    </div>
+  </div>
+</div>
+
+{# ── Action bar ── #}
+<div class="row g-2 mb-3 align-items-center">
+  <div class="col-md-5">
+    <form action="/research" method="post" class="input-group">
+      <input type="text" name="company" class="form-control"
+             placeholder="研究一家公司... Siemens / 西门子 / Medtronic"
+             value="">
+      <select name="engine" class="form-select flex-grow-0" style="width:130px">
+        <option value="api">Claude API</option>
+        <option value="manual">Manual</option>
+      </select>
+      <button class="btn btn-primary" type="submit">
+        <i class="bi bi-search"></i> 调研
+      </button>
+    </form>
+  </div>
+  <div class="col-md-4">
+    <form action="/upload" method="post" enctype="multipart/form-data" class="input-group">
+      <input type="file" name="file" class="form-control" accept=".csv,.xlsx,.tsv">
+      <select name="engine" class="form-select flex-grow-0" style="width:130px">
+        <option value="api">Claude API</option>
+        <option value="manual">Manual</option>
+      </select>
+      <button class="btn btn-outline-secondary" type="submit">
+        <i class="bi bi-upload"></i> 批量
+      </button>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <form action="/" method="get" class="input-group">
+      <input type="text" name="q" class="form-control" placeholder="搜索..." value="{{ q or '' }}">
+      <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-funnel"></i></button>
+      {% if q %}<a href="/" class="btn btn-outline-danger"><i class="bi bi-x"></i></a>{% endif %}
+    </form>
+  </div>
+</div>
+
+{# ── Companies table ── #}
+<div class="card">
+  <div class="card-body p-0">
+    <table class="table table-hover table-sm mb-0 align-middle">
+      <thead class="table-dark" style="font-size:.82rem">
+        <tr>
+          <th style="width:36px">#</th>
+          <th>公司</th>
+          <th style="width:56px">Tier</th>
+          <th style="width:70px">Overall</th>
+          <th style="width:54px">ICP</th>
+          <th style="width:90px">Concur</th>
+          <th style="width:76px">Cross-Sell</th>
+          <th style="width:68px">Intent</th>
+          <th style="width:90px">中国员工</th>
+          <th>AI 摘要</th>
+          <th style="width:70px">更新</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% if companies %}
+        {% for co in companies %}
+        <tr>
+          <td class="text-muted ps-3">{{ loop.index }}</td>
+          <td>
+            <a href="/company/{{ co.slug }}" class="row-link fw-semibold">
+              {{ co.name_en or co.slug }}
+            </a>
+            {% if co.name_cn %}
+            <span class="text-muted ms-1 small">/ {{ co.name_cn }}</span>
+            {% endif %}
+            {% if co.has_ssc %}
+            <span class="badge bg-light text-success border border-success ms-1" title="有共享服务中心">SSC</span>
+            {% endif %}
+          </td>
+          <td>
+            <span class="badge tier-{{ co.tier or 'C' }}">{{ co.tier or '?' }}</span>
+          </td>
+          <td class="fw-bold
+            {% if (co.score_overall or 0) >= 80 %}score-good
+            {% elif (co.score_overall or 0) >= 60 %}score-ok
+            {% else %}score-low{% endif %}">
+            {{ co.score_overall or '—' }}
+          </td>
+          <td>{{ co.score_icp or '—' }}</td>
+          <td>
+            <span class="badge concur-{{ co.concur_installed or 'Unknown' }}">
+              {{ co.concur_installed or 'Unknown' }}
+            </span>
+          </td>
+          <td>{{ co.score_cross_sell or '—' }}</td>
+          <td>{{ co.score_buying_intent or '—' }}</td>
+          <td class="text-muted">{{ co.employees_china or '—' }}</td>
+          <td class="text-muted small" style="max-width:280px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">
+            {{ (co.ai_summary_cn or '')[:110] }}
+          </td>
+          <td class="text-muted small">{{ co.updated_at | datefmt }}</td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan="11" class="text-center text-muted py-5">
+            <div style="font-size:2rem">📭</div>
+            <div class="mt-2">暂无数据 — 在上方输入公司名开始调研</div>
+          </td>
+        </tr>
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

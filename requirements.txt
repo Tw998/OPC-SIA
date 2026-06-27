@@ -1,0 +1,8 @@
+# 核心(批量管线 + Excel 输出)
+openpyxl>=3.1
+
+# Web UI + SQLite
+flask>=3.0
+
+# API 引擎(无人值守调研)
+anthropic>=0.40

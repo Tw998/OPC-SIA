@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}批量调研进度 — Hitpoint Sales Intel{% endblock %}
+
+{% block content %}
+<div style="max-width:760px;margin:0 auto">
+  <a href="/" class="text-muted text-decoration-none small"><i class="bi bi-arrow-left"></i> 返回排名</a>
+
+  <h4 class="mt-2 fw-bold">批量调研进度</h4>
+  <p class="text-muted small">Job #{{ job_id }} · {{ job.filename or '手动上传' }} · 共 {{ job.total }} 家</p>
+
+  {# Progress bar #}
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="d-flex justify-content-between mb-1">
+        <span id="status-text" class="fw-semibold text-muted">
+          {{ job.done }}/{{ job.total }} 完成
+          {% if job.failed %}<span class="text-danger ms-2">{{ job.failed }} 失败</span>{% endif %}
+        </span>
+        <span id="pct-text" class="text-muted">{{ (job.done / [job.total,1]|max * 100)|int }}%</span>
+      </div>
+      <div class="progress" style="height:18px">
+        <div id="progress-bar"
+             class="progress-bar progress-bar-striped progress-bar-animated bg-primary"
+             style="width:{{ (job.done / [job.total,1]|max * 100)|int }}%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {# Done banner (hidden until complete) #}
+  <div id="done-banner" class="alert alert-success d-none">
+    <i class="bi bi-check-circle-fill me-2"></i>
+    <strong>调研完成！</strong>
+    <a href="/" class="btn btn-success btn-sm ms-3">查看排名 →</a>
+    <a href="/export" class="btn btn-outline-success btn-sm ms-2">
+      <i class="bi bi-file-excel"></i> 下载 Excel
+    </a>
+  </div>
+
+  {# Live log #}
+  <div class="card">
+    <div class="card-header py-2 d-flex justify-content-between align-items-center">
+      <span class="fw-semibold small">调研日志</span>
+      <span id="spinner" class="spinner-border spinner-border-sm text-primary"
+            {% if job.status == 'done' %}style="display:none"{% endif %}></span>
+    </div>
+    <div id="job-log"
+         class="card-body p-3"
+         style="font-family:monospace;font-size:.82rem;height:380px;overflow-y:auto;background:#1a1a2e;color:#e0e0e0">
+      {% for line in job.log %}
+      <div class="{{ 'text-success' if line.startswith('✓') else 'text-danger' }}">{{ line }}</div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if job.status == 'done' %}
+  <script>
+    document.getElementById('done-banner').classList.remove('d-none');
+    document.getElementById('spinner').style.display = 'none';
+    document.getElementById('progress-bar').style.width = '100%';
+    document.getElementById('progress-bar').classList.remove('progress-bar-animated');
+  </script>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% if job.status != 'done' %}
+<script>
+(function poll() {
+  fetch('/api/job/{{ job_id }}')
+    .then(r => r.json())
+    .then(data => {
+      document.getElementById('progress-bar').style.width = data.pct + '%';
+      document.getElementById('pct-text').textContent = data.pct + '%';
+      document.getElementById('status-text').innerHTML =
+        data.done + '/' + data.total + ' 完成' +
+        (data.failed ? ' <span class="text-danger ms-2">' + data.failed + ' 失败</span>' : '');
+
+      const log = document.getElementById('job-log');
+      log.innerHTML = data.log.map(l =>
+        '<div class="' + (l.startsWith('✓') ? 'text-success' : 'text-danger') + '">' +
+        l.replace(/</g,'&lt;') + '</div>'
+      ).join('');
+      log.scrollTop = log.scrollHeight;
+
+      if (data.status === 'done') {
+        document.getElementById('done-banner').classList.remove('d-none');
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('progress-bar').classList.remove('progress-bar-animated');
+      } else {
+        setTimeout(poll, 2000);
+      }
+    })
+    .catch(() => setTimeout(poll, 4000));
+})();
+</script>
+{% endif %}
+{% endblock %}
