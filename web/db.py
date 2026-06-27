@@ -9,11 +9,14 @@ import os
 import sqlite3
 from contextlib import contextmanager
 
-DB_PATH = os.environ.get(
-    "INTEL_DB",
-    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                 "data", "intel.db"),
+# Vercel 文件系统只有 /tmp 可写;本地用 data/intel.db
+_default_db = (
+    "/tmp/intel.db"
+    if os.environ.get("VERCEL")
+    else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                      "data", "intel.db")
 )
+DB_PATH = os.environ.get("INTEL_DB", _default_db)
 
 
 @contextmanager

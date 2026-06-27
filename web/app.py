@@ -22,6 +22,9 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET", "hitpoint-sales-intel-2025")
 app.jinja_env.globals["zip"] = zip
 
+# Vercel is serverless — no persistent background threads; run research synchronously.
+_VERCEL = bool(os.environ.get("VERCEL"))
+
 
 @app.template_filter("datefmt")
 def datefmt(s):
@@ -61,6 +64,10 @@ def research():
         flash("请输入公司名", "warning")
         return redirect(url_for("dashboard"))
     slug = slugify(name)
+    if _VERCEL:
+        # Serverless: run synchronously (blocks until done, max 60s)
+        _bg_research(name, engine_name)
+        return redirect(url_for("company", slug=slug))
     threading.Thread(target=_bg_research, args=(name, engine_name), daemon=True).start()
     flash(f"正在调研 {name}，请稍候片刻后刷新页面", "info")
     return redirect(url_for("company", slug=slug))
@@ -108,6 +115,10 @@ def upload():
         flash("文件里没找到公司名", "warning")
         return redirect(url_for("dashboard"))
     job_id = db.create_job(companies, f.filename)
+    if _VERCEL:
+        # Serverless: synchronous batch (will time out for large lists on Vercel)
+        _bg_batch(job_id, engine_name)
+        return redirect(url_for("batch", job_id=job_id))
     threading.Thread(target=_bg_batch, args=(job_id, engine_name), daemon=True).start()
     return redirect(url_for("batch", job_id=job_id))
 
